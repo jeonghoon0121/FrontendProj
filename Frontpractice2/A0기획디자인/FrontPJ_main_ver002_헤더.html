@@ -1,0 +1,122 @@
+<!--
+ver000 영역지정
+ver001 영역지정
+ver002 header 꾸미기
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KoreanDreamGYM</title>
+    <!--
+    구조
+    header
+
+    aside{nav}  main{article{section1,section2}}
+
+    footer
+    -->
+    <style>
+        .divc1/*container1 영역*/
+        {
+            display:inline-block;
+            height: 100%;
+            width: 100%;
+        }
+        .divc11/*container2 영역, aside, main*/
+        {
+            display: flex; 
+            height: 1000px;
+            width: 100%;
+        }
+        .divc2/*header,, footer*/
+        {
+            height: 200px;
+            width: 100%;
+        }
+        .div21/*aside*/
+        {
+            flex-basis: 500px;/*기본크기가 500픽셀로 유지됨 */
+            flex-shrink: 0;/*절대 줄어들지 않음 */
+        }
+        .divc22/*main*/
+        {
+              flex-grow: 1; /* 나머지 공간을 main이 자동으로 채움 */
+            height: 1000px;
+        }
+        .divc3/*nav, article*/
+        {
+            height: 500px;
+            width: 200px;
+        }
+        .divc4/*section*/
+        {
+            height: 100px;
+            width: 100px;
+        }
+        .divc5
+        {
+            height: 50px;
+            width: 50px;
+        }
+        #container1{background-color: chartreuse;}
+        header{background-color: red; display: block;}
+        aside{background-color: orange;}
+        nav{background-color: blue;}
+        main{background-color:aqua;}
+        article{background-color: yellow;}
+        #section1{background-color: blueviolet;}
+        #section2{background-color: brown;}
+        footer{background-color: black;}
+
+        #logo1 
+        {
+                width: 50px;
+                height: 50px;
+                background-color: black;
+                color: white; /* 글씨 보이도록! */
+                text-align: center;
+                line-height: 50px; /* 수직 가운데 정렬 */
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="divc1" id="container1"><!--container1 모든 영역을 수직으로 만드는 영역-->
+        <header class="divc2"><!--header-->
+            <div id="logo1">KDGYM</div>
+        </header>
+
+
+
+
+
+
+        <div class="divc11" id="container2"><!--container2 aside main영역을  수평으로 만드는  영역-->
+            <aside class="divc21">aside
+                <nav class=divc3>nav1</nav>
+            </aside>
+            <main class="divc22">main
+                <article class="divc3">
+                    article
+                    <section id="section1" class="divc4">section1</section>
+                    <section id="section2" class="divc4">section2</section>
+                </article>
+            </main>
+        </div>
+        <footer class="divc2">footer</footer>
+    </div>
+</body>
+
+<script>
+    /*로고*/
+
+    /*헤더*/
+</script>
+
+
+</html>
