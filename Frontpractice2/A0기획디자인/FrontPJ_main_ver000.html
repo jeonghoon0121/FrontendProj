@@ -1,0 +1,64 @@
+<!--
+ver000 영역지정
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KoreanDreamGYM</title>
+    <!--
+    구조
+    header
+
+    aside{nav}  main{article{section1,section2}}
+
+    footer
+    -->
+    <style>
+        .divc1
+        {
+            height: 2000px;
+            width: 2000px;
+        }
+        .divc2
+        {
+            height: 1000px;
+            width: 1000px;
+        }
+        .divc3
+        {
+            height: 500px;
+            width: 500px;
+        }
+        .divc4
+        {
+            height: 100px;
+            width: 100px;
+        }
+        
+        header{background-color: red;}
+        aside{background-color: orange;}
+        nav{background-color: blue;}
+        main{background-color:aqua;}
+        article{background-color: yellow;}
+        #section1{background-color: blueviolet;}
+        #section2{background-color: brown;}
+        footer{background-color: black;}
+        #container{display:inline-block;}
+    </style>
+</head>
+<body>
+    <div class="divc1" id="container1">
+        <header class="divc2">header</header>
+        <aside class="divc2">aside<nav class=divc3>nav</nav></aside><main class="divc2">main
+        <article class="divc3">
+            article
+            <section id="section1" class="divc4">section1</section>
+            <section id="section2" class="divc4">section2</section>
+        </article></main>
+        <footer class="divc2">footer</footer>
+    </div>
+</body>
+</html>
