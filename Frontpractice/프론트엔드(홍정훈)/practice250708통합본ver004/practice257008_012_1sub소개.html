@@ -48,6 +48,7 @@
         width: 100%;
         height:100px;
         background-color:grey;
+        
     }
     #area2 /*main*/
     {
@@ -72,8 +73,6 @@
         /*width:900px;      너비 */  
         width:70%; /*창 줄이면 망가지는 효과 있음 */
         height:100px;   /* 메뉴 영역 높이 , 헤더도 100px이나 남는 부분이 있다. */  
-        /*padding-top:1px;   메뉴를 아래로 내리기 위해 */
-        /*margin-left: -50pt; 메뉴이동*/  
     }
     #logoarea   
     {/*로고 영역*/
@@ -119,7 +118,14 @@
         padding-left: 20px;  /* 패딩 글자사이간의 간격 */ 
         padding-right:20px;
         margin:1px;
-        line-height:100px;    
+        line-height:100px;
+          white-space: nowrap;
+            min-width: 120px;
+  text-align: center;
+
+    
+
+
     }
     #topMenu > li > a:hover 
     {
@@ -153,14 +159,14 @@
     }
 
    
-
+/*********************************************************/
 
 .submenu {
     display: none;
     position: absolute;
     background-color: black;
     padding: 10px 0;
-    min-width: 120px;
+    min-width: 180px;
     z-index: 10;
 }
 
@@ -184,15 +190,10 @@
     display: block;
 }
 
+
 /*********************************************************/
 
 /* 로그인창 설정 그대로 두자.  */
-li label {
-  width:100px;
-  line-height: 36px;
-  float:left;
-  font-weight:bold;
-}
 input[type="text"], input[type="password"], input[type="email"] {
   width:300px;
   height:30px;
@@ -214,7 +215,6 @@ input[type="text"], input[type="password"], input[type="email"] {
 }
 /* 로그인창 버튼 설정 그대로 두자.  */
         </style>
-        <link rel="stylesheet" href="css/register.css">
     </head>
 <body> <!----------------------------------------------------------->
     <div id="container"><!--가운데 정렬을 시키기 위함-->
@@ -223,13 +223,19 @@ input[type="text"], input[type="password"], input[type="email"] {
 
             <!--logo 영역-->
             <div id="logoarea" >
-                <h1><a href="practice257008_012_0main.html" target="_self" id="logoid">KD GYM</a></h1>
+                <h1><a href="practice257008_012_0main.html" target="_self" id="logoid" alt="메인페이지버튼">KD GYM</a></h1>
             </div>
             <!--nav 영역-->
             <nav id="nav">
                 <ul id="topMenu">
-                    <li><a href="practice257008_012_1sub소개.html" target="_self" alt="소개페이지버튼" >GYM</a></li>
-                    <li><a href="practice257008_012_1sub프로.html" target="_self" alt="프로그램페이지버튼"  >Program</a>
+                    <li><a href="practice257008_012_1sub소개.html" target="_self" alt="소개페이지버튼" >GYM</a>
+                        <ul class="submenu">
+                        <li><a href="#">시설 안내</a></li>
+                        <li><a href="#">트레이너 소개</a></li>
+                        <li><a href="#">헬스장 사진</a></li>
+                        </ul>
+                    </li>
+                    <li> <a href="practice257008_012_1sub프로.html" target="_self">Program</a>
                         <!--서브메뉴추가-->
                     <ul class="submenu">
                         <li><a href="#">헬스</a></li>
@@ -244,7 +250,6 @@ input[type="text"], input[type="password"], input[type="email"] {
             </nav>
 
         </header>
-
         <!--main영역-->
         <main id="area2">
             

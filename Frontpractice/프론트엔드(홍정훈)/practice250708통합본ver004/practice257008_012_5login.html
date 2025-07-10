@@ -48,6 +48,7 @@
         width: 100%;
         height:100px;
         background-color:grey;
+        
     }
     #area2 /*main*/
     {
@@ -72,8 +73,6 @@
         /*width:900px;      너비 */  
         width:70%; /*창 줄이면 망가지는 효과 있음 */
         height:100px;   /* 메뉴 영역 높이 , 헤더도 100px이나 남는 부분이 있다. */  
-        /*padding-top:1px;   메뉴를 아래로 내리기 위해 */
-        /*margin-left: -50pt; 메뉴이동*/  
     }
     #logoarea   
     {/*로고 영역*/
@@ -119,7 +118,14 @@
         padding-left: 20px;  /* 패딩 글자사이간의 간격 */ 
         padding-right:20px;
         margin:1px;
-        line-height:100px;    
+        line-height:100px;
+          white-space: nowrap;
+            min-width: 120px;
+  text-align: center;
+
+    
+
+
     }
     #topMenu > li > a:hover 
     {
@@ -153,14 +159,14 @@
     }
 
    
-
+/*********************************************************/
 
 .submenu {
     display: none;
     position: absolute;
     background-color: black;
     padding: 10px 0;
-    min-width: 120px;
+    min-width: 180px;
     z-index: 10;
 }
 
@@ -184,15 +190,10 @@
     display: block;
 }
 
+
 /*********************************************************/
 
 /* 로그인창 설정 그대로 두자.  */
-li label {
-  width:100px;
-  line-height: 36px;
-  float:left;
-  font-weight:bold;
-}
 input[type="text"], input[type="password"], input[type="email"] {
   width:300px;
   height:30px;
@@ -212,23 +213,61 @@ input[type="text"], input[type="password"], input[type="email"] {
     background-color:black;
     font-size:20px;
 }
+fieldset ul {
+  padding: 0;
+}
+
+fieldset ul li {
+  list-style: none;
+  margin: 20px 0;
+  text-align: center;
+}
+
+fieldset label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 18px;
+}
+
+fieldset input[type="text"],
+fieldset input[type="email"],
+fieldset input[type="password"] {
+  width: 300px;
+  height: 35px;
+  padding: 5px 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+
+
 /* 로그인창 버튼 설정 그대로 두자.  */
+
         </style>
     </head>
-<body>
+<body> <!----------------------------------------------------------->
     <div id="container"><!--가운데 정렬을 시키기 위함-->
         <!--header 영역-->
         <header id="area1">
 
             <!--logo 영역-->
             <div id="logoarea" >
-                <h1><a href="practice257008_012_0main.html" target="_self" id="logoid">KD GYM</a></h1>
+                <h1><a href="practice257008_012_0main.html" target="_self" id="logoid" alt="메인페이지버튼">KD GYM</a></h1>
             </div>
             <!--nav 영역-->
             <nav id="nav">
                 <ul id="topMenu">
-                    <li><a href="practice257008_012_1sub소개.html" target="_self" alt="소개페이지버튼" >GYM</a></li>
-                    <li><a href="practice257008_012_1sub프로.html" target="_self" alt="프로그램페이지버튼"  >Program</a>
+                    <li><a href="practice257008_012_1sub소개.html" target="_self" alt="소개페이지버튼" >GYM</a>
+                        <ul class="submenu">
+                        <li><a href="#">시설 안내</a></li>
+                        <li><a href="#">트레이너 소개</a></li>
+                        <li><a href="#">헬스장 사진</a></li>
+                        </ul>
+                    </li>
+                    <li> <a href="practice257008_012_1sub프로.html" target="_self">Program</a>
                         <!--서브메뉴추가-->
                     <ul class="submenu">
                         <li><a href="#">헬스</a></li>
@@ -251,13 +290,13 @@ input[type="text"], input[type="password"], input[type="email"] {
             <article id="testst6">
                     <div id="containera">
                     <h1>회원 가입을 환영합니다</h1>
-                    <form>
+                    <form action="#" >
                         <fieldset>
                         <legend>사용자 정보</legend>    
                         <ul>
                             <li>
                             <label for="uid">아이디</label>
-                            <input type="text" id="uid" autofocus placeholder="4자 ~ 10자 사이, 공백없이" required> 
+                            <input type="text" id="uid" autofocus name="username" placeholder="4자 ~ 10자 사이, 공백없이" required> 
                             </li>
                             <li>
                             <label for="umail">이메일</label>
@@ -275,7 +314,7 @@ input[type="text"], input[type="password"], input[type="email"] {
                         </fieldset>
 
                         <div id="buttons">
-                        <input type="submit" value="가입하기">
+                        <input type="submit" id="sbn1" value="가입하기">
                         <input type="reset" value="취소">
                         </div>
 
@@ -294,5 +333,31 @@ input[type="text"], input[type="password"], input[type="email"] {
         </footer>
 
     </div>
+    <script>
+        const $sbn1=document.querySelector("#sbn1")
+        $sbn1.onclick=function(event)
+            {
+                event.preventDefault();
+                const userInput = document.querySelector("#uid");
+                const nameValue = userInput.name; // name 속성 값 가져오기
+                const inputValue = userInput.value; // 사용자가 입력한 텍스트 값
+                const pwd1 = document.querySelector("#pwd1");
+                const pwd2 = document.querySelector("#pwd2");
+                if (pwd1.value !== pwd2.value) 
+                {
+                    alert("비밀번호가 일치하지 않습니다.");
+                    pwd2.focus();
+                    return; // 가입 멈춤
+                }
+
+                alert(`가입이 되었습니다.\n입력값: ${inputValue}\nname 속성: ${nameValue}`);
+                $sbn1.style.backgroundColor="hotpink"
+
+                
+
+
+            }
+
+    </script>
 </body>
 </html>
