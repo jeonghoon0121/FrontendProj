@@ -1,5 +1,6 @@
 <!--
 ver000 영역지정
+ver001 영역지정
 -->
 
 <!DOCTYPE html>
@@ -17,25 +18,47 @@ ver000 영역지정
     footer
     -->
     <style>
-        .divc1/*container 영역*/
+        .divc1/*container1 영역*/
         {
+            display:inline-block;
             height: 100%;
             width: 100%;
         }
-        .divc2
+        .divc11/*container2 영역, aside, main*/
         {
+            display: flex; 
             height: 1000px;
-            width: 1000px;
+            width: 100%;
         }
-        .divc3
+        .divc2/*header,, footer*/
+        {
+            height: 200px;
+            width: 100%;
+        }
+        .div21/*aside*/
+        {
+            flex-basis: 500px;/*기본크기가 500픽셀로 유지됨 */
+            flex-shrink: 0;/*절대 줄어들지 않음 */
+        }
+        .divc22/*main*/
+        {
+              flex-grow: 1; /* 나머지 공간을 main이 자동으로 채움 */
+            height: 1000px;
+        }
+        .divc3/*nav, article*/
         {
             height: 500px;
-            width: 500px;
+            width: 200px;
         }
-        .divc4
+        .divc4/*section*/
         {
             height: 100px;
             width: 100px;
+        }
+        .divc5
+        {
+            height: 50px;
+            width: 50px;
         }
         #container1{background-color: chartreuse;}
         header{background-color: red;}
@@ -46,18 +69,24 @@ ver000 영역지정
         #section1{background-color: blueviolet;}
         #section2{background-color: brown;}
         footer{background-color: black;}
-        #container{display:inline-block;}
+
     </style>
 </head>
 <body>
-    <div class="divc1" id="container1">
+    <div class="divc1" id="container1"><!--container1 모든 영역을 수직으로 만드는 영역-->
         <header class="divc2">header</header>
-        <aside class="divc2">aside<nav class=divc3>nav</nav></aside><main class="divc2">main
-        <article class="divc3">
-            article
-            <section id="section1" class="divc4">section1</section>
-            <section id="section2" class="divc4">section2</section>
-        </article></main>
+        <div class="divc11" id="container2"><!--container2 aside main영역을  수평으로 만드는  영역-->
+            <aside class="divc21">aside
+                <nav class=divc3>nav</nav>
+            </aside>
+            <main class="divc22">main
+                <article class="divc3">
+                    article
+                    <section id="section1" class="divc4">section1</section>
+                    <section id="section2" class="divc4">section2</section>
+                </article>
+            </main>
+        </div>
         <footer class="divc2">footer</footer>
     </div>
 </body>
