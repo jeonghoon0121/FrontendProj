@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KD GYM 소개 페이지</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+
+    #container {
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    header {
+      background-color: grey;
+      height: 100px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+    }
+
+    #logoarea {
+      font-size: 24px;
+      font-weight: bold;
+      color: white;
+    }
+
+    #logoid {
+      color: white;
+      text-decoration: none;
+    }
+
+    #logoid:hover {
+      color: red;
+    }
+
+    nav {
+      background-color: black;
+      height: 100px;
+    }
+
+    #topMenu {
+      display: flex;
+      list-style: none;
+      height: 100px;
+      align-items: center;
+      margin: 0;
+    }
+
+    #topMenu > li {
+      position: relative;
+    }
+
+    #topMenu > li > a {
+      display: block;
+      font-size: 20px;
+      color: white;
+      padding: 0 20px;
+      line-height: 100px;
+      white-space: nowrap;
+    }
+
+    #topMenu > li > a:hover {
+      color: red;
+    }
+
+    .submenu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: black;
+      min-width: 180px;
+      z-index: 10;
+      white-space: nowrap;
+    }
+
+    .submenu li a {
+      display: block;
+      padding: 10px 20px;
+      font-size: 16px;
+      color: white;
+    }
+
+    .submenu li a:hover {
+      background-color: red;
+    }
+
+    #topMenu > li:hover .submenu {
+      display: block;
+    }
+
+    main {
+      background-color: white;
+      padding: 40px 20px;
+    }
+
+    #containera {
+      max-width: 1000px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    #containera h1 {
+      font-size: 32px;
+      margin-bottom: 40px;
+      color: darkred;
+    }
+
+    .gym-zone {
+      margin-bottom: 60px;
+    }
+
+    .gym-zone h3 {
+      font-size: 24px;
+      color: #333;
+      margin-bottom: 15px;
+    }
+
+    .gym-zone img {
+      width: 100%;
+      max-width: 800px;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    footer {
+      background-color: black;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      #topMenu {
+        flex-direction: column;
+      }
+
+      #topMenu > li > a {
+        line-height: 60px;
+        font-size: 18px;
+      }
+
+      .submenu {
+        position: static;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <!-- Header -->
+    <header id="area1">
+      <div id="logoarea">
+        <a href="practice257008_012_0main.html" id="logoid">KD GYM</a>
+      </div>
+      <nav id="nav">
+        <ul id="topMenu">
+          <li>
+            <a href="#">GYM</a>
+            <ul class="submenu">
+              <li><a href="#">시설 안내</a></li>
+              <li><a href="#">트레이너 소개</a></li>
+              <li><a href="#">헬스장 사진</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">Program</a>
+            <ul class="submenu">
+              <li><a href="#">헬스</a></li>
+              <li><a href="#">요가</a></li>
+              <li><a href="#">PT</a></li>
+              <li><a href="#">다이어트</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">My status</a></li>
+          <li><a href="#">로그인</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Main 소개 영역 -->
+    <main id="area2">
+      <article id="testst6">
+        <div id="containera">
+          <h1>KD GYM 시설 소개</h1>
+
+          <section class="gym-zone">
+            <h3>🏋️ 최신 머신 ZONE</h3>
+            <img src="images/sub1머신.png" alt="최신머신존">
+          </section>
+
+          <section class="gym-zone">
+            <h3>🏋️ 프리웨이트 ZONE</h3>
+            <img src="images/sub1프리.png" alt="프리웨이트존">
+          </section>
+
+          <section class="gym-zone">
+            <h3>🚴 유산소 ZONE</h3>
+            <img src="images/sub1유산소.png" alt="유산소존">
+          </section>
+
+          <section class="gym-zone">
+            <h3>🧘 스트레칭 ZONE</h3>
+            <img src="images/sub1스트.png" alt="스트레칭존">
+          </section>
+
+          <section class="gym-zone">
+            <h3>🚿 넓은 샤워장</h3>
+            <img src="images/sub1샤워장.png" alt="샤워장">
+          </section>
+
+          <section class="gym-zone">
+            <h3>👕 회원복 무료대여</h3>
+            <img src="images/sub1회원복.png" alt="회원복 대여">
+          </section>
+        </div>
+      </article>
+    </main>
+
+    <!-- Footer -->
+    <footer id="area3">
+      상호명 : KD GYM<br>
+      주소 : 경기도 하남시<br>
+      상담번호 : 010-9505-7895 (홍정훈)<br>
+      이메일 : hnjh12195@naver.com
+    </footer>
+  </div>
+</body>
+</html>
