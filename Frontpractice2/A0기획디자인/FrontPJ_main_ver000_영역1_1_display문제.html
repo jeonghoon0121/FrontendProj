@@ -10,27 +10,40 @@ ver000 영역지정
     <title>KoreanDreamGYM</title>
     <!--
     구조
-    header
+    header{logo, nav}
 
-    aside{nav}  main{article{section1,section2}}
-
+    main{aside , article{section1,section2}}
+s
     footer
     -->
+    <!--
+    id
+    logoarea1
+    -->
     <style>
-        .divc1
+        */**/
         {
-            height: 2000px;
-            width: 2000px;
+
+        }
+        .divc1/*container*/ 
+        {
+            height: 500px;
+            width: 100%;
         }
         .divc2
         {
+            height: 500px;
+            width: 100%;
+        }
+        .divc21
+        {
             height: 1000px;
-            width: 1000px;
+            width: 100%;
         }
         .divc3
         {
-            height: 500px;
-            width: 500px;
+            height: 400px;
+            width: 400px;
         }
         .divc4
         {
@@ -39,20 +52,22 @@ ver000 영역지정
         }
         
         header{background-color: red;}
-        aside{background-color: orange;}
-        nav{background-color: blue;}
-        main{background-color:aqua;}
-        article{background-color: yellow;}
+        aside{background-color: orange; display : inline-block;}
+        nav{background-color: blue; display:inline-block;}
+        main{background-color:aqua; }
+        article{background-color: yellow; display : inline-block;}
+        footer{background-color: black;}
+        #container1{display:inline-block;}
         #section1{background-color: blueviolet;}
         #section2{background-color: brown;}
-        footer{background-color: black;}
-        #container{display:inline-block;}
+        #logoarea1{background-color: tomato; display:inline-block;}
     </style>
 </head>
 <body>
     <div class="divc1" id="container1">
-        <header class="divc2">header</header>
+        <header class="divc2">header<div id="logoarea1">logo</div><nav>nav</nav></header>
         <main class="divc2">main
+        <aside class="divc3">aside</aside>
         <article class="divc3">
             article
             <section id="section1" class="divc4">section1</section>
