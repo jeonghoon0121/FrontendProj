@@ -1,0 +1,88 @@
+<!--
+ver000 영역지정
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KoreanDreamGYM</title>
+    <!--
+    구조
+    header{logo, nav}
+
+    main{aside , article{section1,section2}}
+s
+    footer
+    -->
+    <!--
+    id
+    logoarea1
+    -->
+    <style>
+        body
+        {
+            margin: 0;
+            padding: 0;
+        }
+
+        */**/
+        { 
+
+        }
+        .divc1/*container*/ 
+        {
+            background-color: black;
+            
+            margin:0px;
+            height:3000px;
+            width: 100%;
+        }
+        .divc2/*header main footer*/
+        {
+            height: 500px;
+            width: 100%;
+        }
+        .divc3
+        {
+            height: 400px;
+            width: 400px;
+        }
+        .divc4
+        {
+            height: 100px;
+            width: 100px;
+        }
+        
+        header{background-color: red;display:flex;}
+        aside{background-color: orange; order:1;}
+        nav{background-color: blue; order:2;}
+        main{background-color:aqua; display:flex; width:auto;}
+        article{background-color: yellow; order:2;}
+        footer{background-color: black;}
+
+        #container1
+        {
+            /*가운데정렬*/
+            width:auto;
+        }
+        #section1{background-color: blueviolet;}
+        #section2{background-color: brown;}
+        #logoarea1{background-color: tomato; display:inline-block; order:1;}
+    </style>
+</head>
+<body>
+    <div class="divc1" id="container1">
+        <header class="divc2">header<div class="divc4" id="logoarea1">logo</div><nav  class="divc4">nav</nav></header>
+        <main class="divc2">main
+        <aside class="divc3">aside</aside>
+        <article class="divc3">
+            article
+            <section id="section1" class="divc4">section1</section>
+            <section id="section2" class="divc4">section2</section>
+        </article></main>
+        <footer class="divc2">footer</footer>
+    </div>
+</body>
+</html>
