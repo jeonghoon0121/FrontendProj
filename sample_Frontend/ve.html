@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Ocean Vessel Interface</title>
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus+SC&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Marcellus SC', serif;
+      background: linear-gradient(to bottom, #0c2238, #041e2a);
+      color: #d4e4ef;
+      overflow: hidden;
+    }
+
+    .deck {
+      max-width: 800px;
+      margin: 60px auto;
+      padding: 40px;
+      background: rgba(12, 24, 36, 0.85);
+      border: 3px solid #35526b;
+      box-shadow: 0 0 40px #0f2a3f;
+      position: relative;
+      z-index: 2;
+    }
+
+    h1 {
+      font-size: 40px;
+      color: #a8c1d4;
+      border-bottom: 2px solid #35526b;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.8;
+      text-align: center;
+    }
+
+    .button {
+      display: block;
+      margin: 30px auto 0;
+      padding: 12px 24px;
+      background-color: #122d42;
+      color: #d4e4ef;
+      border: 2px solid #35526b;
+      text-decoration: none;
+      text-align: center;
+      transition: 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #35526b;
+      color: #122d42;
+    }
+
+    /* 파도 효과 */
+    .waves {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 200px;
+      background: url('https://www.transparenttextures.com/patterns/wave-cut.png');
+      opacity: 0.1;
+      animation: drift 20s linear infinite;
+      z-index: 1;
+    }
+
+    @keyframes drift {
+      from { background-position: 0 0; }
+      to { background-position: 1000px 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="waves"></div>
+  <div class="deck">
+    <h1>VESSEL CONTROL SYSTEM</h1>
+    <p>바람은 북서쪽으로 불고,  
+    항해는 시작된다.  
+    이 함선은 시간을 가르고 바다를 항한다.</p>
+    <a href="#" class="button">승선하기</a>
+  </div>
+</body>
+</html>

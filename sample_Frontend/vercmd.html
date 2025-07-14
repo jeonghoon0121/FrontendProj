@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Command Prompt Emulator</title>
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #000;
+      color: #00ff00;
+      font-family: 'VT323', monospace;
+      font-size: 1.4em;
+      padding: 20px;
+      margin: 0;
+    }
+
+    .terminal {
+      border: 2px solid #00ff00;
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+      box-shadow: 0 0 15px #00ff00;
+    }
+
+    .line {
+      margin: 5px 0;
+    }
+
+    .input-line {
+      display: flex;
+      align-items: center;
+    }
+
+    .cursor {
+      width: 10px;
+      height: 1.4em;
+      background-color: #00ff00;
+      margin-left: 5px;
+      animation: blink 1s steps(2, start) infinite;
+    }
+
+    @keyframes blink {
+      to {
+        visibility: hidden;
+      }
+    }
+
+    input {
+      background: none;
+      border: none;
+      color: #00ff00;
+      font-family: inherit;
+      font-size: 1em;
+      outline: none;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="terminal">
+    <div class="line">Microsoft(R) Windows DOS<br>Version 6.22</div>
+    <div class="line">© Microsoft Corp 1981-1994</div>
+    <div class="line">C:\Users\JeongHoon></div>
+    <div class="input-line">
+      <input type="text" id="cmdInput" onkeydown="runCommand(event)">
+      <div class="cursor"></div>
+    </div>
+    <div class="line" id="outputArea">_</div>
+  </div>
+
+  <script>
+    function runCommand(e) {
+      if (e.key === 'Enter') {
+        const input = document.getElementById('cmdInput').value;
+        const output = document.getElementById('outputArea');
+        let response = '';
+
+        switch (input.toLowerCase()) {
+          case 'dir':
+            response = 'Volume in drive C is SYSTEM\nDirectory of C:\\Users\\JeongHoon\n\nalien.txt\nlog937.dat\nmu_th_ur.exe\n\n3 file(s)';
+            break;
+          case 'help':
+            response = 'Available commands: dir, help, echo, exit';
+            break;
+          case 'echo hello':
+            response = 'hello';
+            break;
+          case 'exit':
+            response = '>> Shutting down terminal...';
+            break;
+          default:
+            response = `'${input}' is not recognized as an internal or external command`;
+        }
+
+        output.innerText = response;
+        document.getElementById('cmdInput').value = '';
+      }
+    }
+  </script>
+</body>
+</html>

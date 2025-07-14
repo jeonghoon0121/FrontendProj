@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Ocean Vessel Motion</title>
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus+SC&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Marcellus SC', serif;
+      background: linear-gradient(to bottom, #082032, #04101e);
+      color: #e0f7ff;
+      overflow: hidden;
+    }
+
+    .sea {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 250px;
+      background: url('https://www.transparenttextures.com/patterns/wave-cut.png');
+      background-size: cover;
+      animation: waveMotion 10s linear infinite;
+      z-index: 1;
+      opacity: 0.15;
+    }
+
+    @keyframes waveMotion {
+      from { background-position-x: 0; }
+      to { background-position-x: 1000px; }
+    }
+
+    .vessel {
+      max-width: 800px;
+      margin: 120px auto;
+      padding: 40px;
+      background: rgba(15, 30, 45, 0.85);
+      border: 3px solid #50788c;
+      box-shadow: 0 0 40px #0a1a28;
+      position: relative;
+      z-index: 2;
+      animation: vesselSwing 6s ease-in-out infinite;
+    }
+
+    @keyframes vesselSwing {
+      0%, 100% { transform: rotate(-0.5deg) translateY(0px); }
+      25% { transform: rotate(1deg) translateY(4px); }
+      50% { transform: rotate(0deg) translateY(2px); }
+      75% { transform: rotate(-1deg) translateY(4px); }
+    }
+
+    h1 {
+      font-size: 36px;
+      color: #b8d8e5;
+      text-align: center;
+      border-bottom: 2px solid #50788c;
+      padding-bottom: 10px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.8;
+      text-align: center;
+    }
+
+    .button {
+      display: block;
+      margin: 30px auto;
+      padding: 12px 24px;
+      background-color: #102838;
+      color: #e0f7ff;
+      border: 2px solid #50788c;
+      text-align: center;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #50788c;
+      color: #102838;
+    }
+  </style>
+</head>
+<body>
+  <div class="sea"></div>
+  <div class="vessel">
+    <h1>NAVAL CONTROL SYSTEM</h1>
+    <p>함선은 파도를 가르며 움직인다.  
+    바람은 차갑고, 항해는 시작됐다.</p>
+    <a href="#" class="button">승선하기</a>
+  </div>
+</body>
+</html>

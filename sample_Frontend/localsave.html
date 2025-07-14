@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>로컬 스토리지 메모장</title>
+  <style>
+    body {
+      background-color: #111;
+      color: #00ffcc;
+      font-family: monospace;
+      padding: 20px;
+    }
+
+    textarea {
+      width: 100%;
+      height: 300px;
+      background-color: #000;
+      color: #00ffcc;
+      border: 2px solid #00ffcc;
+      padding: 10px;
+      font-size: 1em;
+      resize: none;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #00ffcc;
+      color: #000;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #00ffee;
+    }
+  </style>
+</head>
+<body>
+  <h2>📁 LOCAL MEMO</h2>
+  <textarea id="memo" placeholder="여기에 메모를 입력하세요..."></textarea><br>
+  <button onclick="saveMemo()">💾 저장</button>
+
+  <script>
+    // 페이지 로드 시 기존 내용 불러오기
+    window.onload = function() {
+      const savedMemo = localStorage.getItem("userMemo");
+      if (savedMemo) {
+        document.getElementById("memo").value = savedMemo;
+      }
+    }
+
+    // 저장 함수
+    function saveMemo() {
+      const content = document.getElementById("memo").value;
+      localStorage.setItem("userMemo", content);
+      alert("✅ 메모가 저장되었습니다!");
+    }
+  </script>
+</body>
+</html>
