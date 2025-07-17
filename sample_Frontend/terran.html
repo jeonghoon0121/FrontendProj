@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Terran Command U.I.</title>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(to bottom right, #030303, #1a1a1a);
+      color: #00ff90;
+      font-family: 'Share Tech Mono', monospace;
+      overflow: hidden;
+    }
+
+    .interface {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 40px;
+      border: 4px solid #00ff90;
+      background: #0c0c0c url('https://www.transparenttextures.com/patterns/brushed-alum.png');
+      box-shadow: 0 0 60px #00ff90 inset, 0 0 40px #001f10;
+      position: relative;
+      z-index: 2;
+    }
+
+    h1 {
+      font-size: 32px;
+      text-align: center;
+      color: #00ff90;
+      text-shadow: 0 0 10px #00ff90;
+      border-bottom: 2px solid #00ff90;
+      padding-bottom: 10px;
+    }
+
+    .status {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+      font-size: 16px;
+      background-color: rgba(0, 255, 144, 0.1);
+      padding: 10px;
+      border: 1px solid #00ff90;
+    }
+
+    .panel {
+      margin-top: 30px;
+      padding: 20px;
+      background-color: #111;
+      border: 2px solid #00ff90;
+      box-shadow: inset 0 0 10px #00ff90;
+    }
+
+    .button {
+      margin-top: 20px;
+      display: block;
+      width: 100%;
+      padding: 12px;
+      background-color: #000;
+      color: #00ff90;
+      border: 2px solid #00ff90;
+      font-size: 16px;
+      font-weight: bold;
+      text-align: center;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #00ff90;
+      color: #000;
+    }
+
+    .warning {
+      text-align: center;
+      margin-top: 20px;
+      color: #ff3c00;
+      font-weight: bold;
+      text-shadow: 0 0 6px #ff3c00;
+    }
+  </style>
+</head>
+<body>
+  <div class="interface">
+    <h1>TERRAN COMMAND CONSOLE</h1>
+    <div class="status">
+      <div>ENERGY: 87%</div>
+      <div>SHIELD: STABLE</div>
+      <div>UNIT LINK: ACTIVE</div>
+    </div>
+    <div class="panel">
+      <p>전술 링크가 활성화되었습니다.  
+      병참 데이터를 검토하고 명령을 입력하십시오.</p>
+      <button class="button">작전 실행</button>
+    </div>
+    <div class="warning">⚠ 핵탄두 제어 모듈 연결됨</div>
+  </div>
+</body>
+</html>
